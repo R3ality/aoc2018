@@ -1,0 +1,1 @@
+$r = 0; cat "input.txt" | % { $r += $_ }; $r
