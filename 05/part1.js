@@ -13,13 +13,12 @@ input = input.split('').reduce((accum, current) => {
         let prev = accum[accum.length-1];
         if (current === current.toUpperCase()) {
             if (current.toLowerCase() === prev) accum.pop(); // xX reaction, remove previous
-            else accum.push(current);
+            else accum.push(current); // no reaction, add current
         }
         else if (current === current.toLowerCase()) {
             if (current.toUpperCase() === prev) accum.pop(); // Xx reaction, remove previous
-            else accum.push(current);
+            else accum.push(current); // no reaction, add current
         }
-        else accum.push(current); // no reaction, add current
     }
     return accum;
 }, []).join('');
